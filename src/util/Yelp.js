@@ -26,9 +26,7 @@ const Yelp = {
                     'Authorization': `Bearer ${accessToken}`
                 }
             }).then(response => {
-                if(response.ok) {
-                    return response.json();
-                }
+                return response.json();
             }).then(jsonResponse => {
                 if(jsonResponse.businesses) {
                     return jsonResponse.businesses.map(business => {
