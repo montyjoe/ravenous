@@ -14,9 +14,7 @@ const Yelp = {
         return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`, {
             method: 'POST'
         }).then(response => {
-            if(response.ok) {
-                return response.json();
-            }
+            return response.json();
         }).then(jsonResponse => {
             accessToken = jsonResponse.access_token;
         });
